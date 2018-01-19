@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:visibility="visible"
+    tools:openDrawer="left"
+    android:orientation="vertical"
+    android:background="@drawable/tlo1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="110dp"
+            android:checkedButton="@+id/Bez">
+
+            <RadioButton
+                android:id="@+id/Bez"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="RadioGroup"
+                android:text="Bez Raportu"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/Email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="RadioGroup"
+                android:text="Raport na mail"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/Pdf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:onClick="RadioGroup"
+                android:text="Raport do pdf"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/Wyswietl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="RadioGroup"
+                android:text="Pokaz Raport"
+                android:textSize="18sp" />
+
+        </RadioGroup>
+
+
+    </RelativeLayout>
+
+    <include
+        layout="@layout/app_bar_raport2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:fitsSystemWindows="true"
+        android:visibility="gone"
+        app:headerLayout="@layout/nav_header_raport2"
+        app:menu="@menu/activity_raport2_drawer" />
+
+</android.support.v4.widget.DrawerLayout>

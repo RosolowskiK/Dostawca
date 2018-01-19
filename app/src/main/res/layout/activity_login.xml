@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:visibility="visible"
+    tools:openDrawer="left">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/tlo02"
+        android:backgroundTintMode="screen"
+        android:clickable="false"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/login03">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/editText_haslo"
+            android:layout_toLeftOf="@+id/editText_haslo"
+            android:layout_toStartOf="@+id/editText_haslo"
+            android:src="@drawable/key2"></ImageView>
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/editText_login"
+            android:layout_toLeftOf="@+id/editText_login"
+            android:layout_toStartOf="@+id/editText_login"
+            android:src="@drawable/person"></ImageView>
+
+        <Button
+            android:id="@+id/buttonLogiin"
+            android:layout_width="140dp"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:autoText="false"
+            android:background="@drawable/przycisk01"
+            android:elevation="0dp"
+            android:onClick="SaveText"
+            android:shadowColor="@color/colorAccent"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/show1"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignBottom="@+id/editText_haslo"
+            android:layout_toEndOf="@+id/editText_login"
+            android:layout_toRightOf="@+id/editText_login"
+            android:background="@drawable/eye"
+            android:elevation="0dp" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_below="@+id/imageView2"
+            android:layout_centerHorizontal="true"
+            android:background="@color/background_dark"
+            android:text="test"
+            android:textAlignment="center"
+            android:textColor="@color/custom_progress_red_header"
+            android:textSize="20dp"
+            android:visibility="invisible" />
+
+        <EditText
+            android:id="@+id/editText_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/editText_haslo"
+            android:layout_alignLeft="@+id/editText_haslo"
+            android:layout_alignStart="@+id/editText_haslo"
+            android:layout_marginBottom="20dp"
+            android:contextClickable="false"
+            android:ems="10"
+            android:hint="login"
+            android:inputType="textPostalAddress|textPassword"
+            android:singleLine="true"
+            android:textAlignment="center"
+            android:textColorLink="@android:color/black">
+
+            <requestFocus />
+        </EditText>
+
+
+        <EditText
+            android:id="@+id/editText_haslo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageView2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="46dp"
+            android:cursorVisible="true"
+            android:ems="10"
+            android:hint="haslo"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:textAlignment="center"
+            android:textColorLink="@android:color/black"
+            android:textIsSelectable="false">
+
+            <requestFocus />
+        </EditText>
+
+    </RelativeLayout>
+
+    <include
+        layout="@layout/app_bar_drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible" />
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:fitsSystemWindows="true"
+        android:visibility="visible"
+        app:headerLayout="@layout/nav_header_drawer"
+        app:menu="@menu/activity_drawer_drawer" />
+
+</android.support.v4.widget.DrawerLayout>

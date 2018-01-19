@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/logowanie"
+            android:icon="@drawable/logowanie"
+            android:title="Wyloguj" />
+        <item
+            android:id="@+id/mapa"
+            android:icon="@drawable/mapa"
+            android:title="Mapa" />
+        <item
+            android:id="@+id/punkty"
+            android:icon="@drawable/trasa"
+            android:title="Punkty na trasie" />
+        <item
+            android:id="@+id/raport"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Raport" />
+
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/about"
+                android:icon="@drawable/ic_menu_share"
+                android:title="O programie" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="scalka" />
+        </menu>
+    </item>
+
+</menu>

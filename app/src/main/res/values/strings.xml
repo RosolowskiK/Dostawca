@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Dostawca</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_maps2">Map</string>
+
+    <string-array name="Punkty">
+        <item>Punkt 1</item>
+        <item>Punkt 2</item>
+        <item>Punkt 3</item>
+        <item>Punkt 4</item>
+        <item>Punkt 5</item>
+        <item>Punkt 6</item>
+        <item>Punkt 7</item>
+        <item>Punkt 8</item>
+        <item>Punkt 9</item>
+        <item>Punkt 10</item>
+    </string-array>
+
+    <array name="pkt">
+        <item>cos</item>
+
+    </array>
+
+
+    <!-- ______________________________________________________do menu ___________________________________________________________________________________-->
+
+    <string name="action_settings">Tu cos powstaje</string>
+
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="title_activity_drawer">DrawerActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_map">MapActivity</string>
+    <string name="title_activity_punkt">PunktActivity</string>
+    <string name="title_activity_raport2">RaportActivity2</string>
+
+
+    <!-- ______________________________________________________do menu ___________________________________________________________________________________-->
+
+</resources>
+
