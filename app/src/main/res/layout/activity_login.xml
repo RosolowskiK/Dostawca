@@ -126,7 +126,7 @@
         layout="@layout/app_bar_drawer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible" />
+        android:visibility="gone" />
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
@@ -134,7 +134,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="left"
         android:fitsSystemWindows="true"
-        android:visibility="visible"
+        android:visibility="gone"
         app:headerLayout="@layout/nav_header_drawer"
         app:menu="@menu/activity_drawer_drawer" />
 

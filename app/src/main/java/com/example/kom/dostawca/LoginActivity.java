@@ -31,13 +31,16 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,AsyncResponse
 {
     EditText editText_haslo;
     EditText editText_login;
     TextView text;
+    String [] dane = new String[100];
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -45,18 +48,19 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 ///--------
+
         editText_haslo=(EditText)findViewById(R.id.editText_haslo);
         Button button=(Button)findViewById(R.id.show1);
 
 
         //podswietlanie hasla
-        button.setOnTouchListener(new View.OnTouchListener() {
+        button.setOnTouchListener(new View.OnTouchListener()
+        {
             @Override
             public boolean onTouch(View v, MotionEvent event)
             {
                 switch (event.getAction())
                 {
-
                     case MotionEvent.ACTION_DOWN:
                         editText_haslo.setInputType(1);
                         break;
@@ -68,7 +72,6 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
                 return true;
             }
         });
-
 
         //------
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -83,7 +86,7 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
-//-------------------
+    //-------------------
     public void SaveText(View view) throws SQLException, ClassNotFoundException
     {
         text = (TextView)findViewById(R.id.text);
@@ -92,6 +95,8 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
 
         String loginText = editText_login.getText().toString();
         String hasloText = editText_haslo.getText().toString();
+
+        MapsStart();
 
         boolean connected = false;
         ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -133,29 +138,68 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
     @Override
     public void processFinish(String output)
     {
-            if(output.equals("ok"))
-            {
-                text.setVisibility(View.GONE);
-                editText_login.setText("");
-                editText_haslo.setText("");
-                MapsStart();
-            }
-            else
-            {
-                editText_login.setText("");
-                editText_haslo.setText("");
-                text.setText("Złe dane logowanie sproboj jeszcze raz");
-                text.setVisibility(View.VISIBLE);
-            }
+        if(output.equals("no"))
+        {
+
+            text.setText("Złe dane logowanie sproboj jeszcze raz");
+            text.setVisibility(View.VISIBLE);
+
+        }
+        else
+        {
+            text.setVisibility(View.GONE);
+            editText_login.setText("");
+            editText_haslo.setText("");
+            editText_login.setText("");
+            editText_haslo.setText("");
+            dodajDane(output);
+            MapsStart();
+        }
     }
+    void dodajDane(String s)
+    {
+        int licznik =0;
+        String Imie="",Nazwisko="",Id="";
+        for(int i=0;i<s.length();i++)
+        {
+            if (s.charAt(i) == '.')
+            {
+                licznik += 1;
+                if( licznik == 5)
+                {
+                    break;
+                }
+            }
+            else if(licznik == 0)
+            {
+                Imie+=s.charAt(i);
+            }
+            else if(licznik == 2)
+            {
+                Nazwisko += s.charAt(i);
+            }
+            else if(licznik == 4)
+            {
+                Id+=s.charAt(i);
+            }
+
+        }
+        dane[1]=Imie;
+        dane[2]=Nazwisko;
+        dane[3]=Id;
+
+    }
+
 
     public void MapsStart()
     {
-        Context context;
-        Intent intent;
-
-        context = getApplicationContext();
-        intent = new Intent(context, MapActivity.class);
+        dane[0]="PUNKTY";
+        dane[1] = "1";
+        dane[2] = "Imie";
+        dane[3] = "nazwisko";
+        dane[4] = "0";
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("Dane", dane);
         startActivity(intent);
     }
 

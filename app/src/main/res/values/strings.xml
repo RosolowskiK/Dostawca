@@ -35,6 +35,7 @@
     <string name="title_activity_map">MapActivity</string>
     <string name="title_activity_punkt">PunktActivity</string>
     <string name="title_activity_raport2">RaportActivity2</string>
+    <string name="title_activity_pkt">Map</string>
 
 
     <!-- ______________________________________________________do menu ___________________________________________________________________________________-->

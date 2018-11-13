@@ -19,20 +19,18 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
 
-        android:layout_above="@+id/pro"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="80dp" />
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView" />
 
-    <ProgressBar
-        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:id="@+id/pro"
-        tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="350dp"
-        android:layout_alignParentBottom="true"
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="93dp" />
+        android:layout_marginTop="48dp"
+        android:text="TextView" />
 
 </RelativeLayout>
